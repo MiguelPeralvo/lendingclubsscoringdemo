@@ -1,10 +1,6 @@
 {
   "run_name": "Nightly model training",
-  "new_cluster": {
-    "spark_version": "6.6.x-cpu-ml-scala2.11",
-    "node_type_id": "Standard_DS13_v2",
-    "num_workers": 2
-  },
+  "existing_cluster_id": "0602-071346-leis134",
   "libraries": [
   ],
   "email_notifications": {
@@ -19,6 +15,6 @@
     "timezone_id": "America/Los_Angeles"
   },
   "spark_python_task": {
-    "python_file": "will ge filled automatically"
+    "python_file": "will get filled automatically"
   }
 }

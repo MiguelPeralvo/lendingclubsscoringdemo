@@ -11,7 +11,7 @@ from lendingclub_scoring.pipelines.LendingClubTrainingPipeline import LendingClu
 from lendingclub_scoring.pipelines.LendingClubModelEvaluationPipeline import LendingClubModelEvaluationPipeline
 from lendingclub_scoring.pipelines.LendingClubConsumerPipeline import LendingClubConsumerPipeline
 
-spark = SparkSession.builder.appName('ForecastingTest').getOrCreate()
+spark = SparkSession.builder.appName('LendingClubTest').getOrCreate()
 conf = read_config('e2e_int_config.yaml', sys.argv[1])
 experimentID = setupMlflowConf(conf)
 
