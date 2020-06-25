@@ -60,6 +60,14 @@ stages:
       displayName: 'Install Python Dependencies'
 
     - script: |
+        echo >> $HOME/.databrickscfg
+        echo "[default]" >> $HOME/.databrickscfg
+        echo "host=$(DATABRICKS_HOST)" >> $HOME/.databrickscfg
+        echo "token=$(DATABRICKS_TOKEN)" >> $HOME/.databrickscfg
+        cat $HOME/.databrickscfg
+      displayName: 'Configuring cli'
+
+    - script: |
         pip install pytest
         python -m pytest
       displayName: 'Run Unit tests'
