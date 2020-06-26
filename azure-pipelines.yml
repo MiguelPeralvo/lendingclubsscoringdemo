@@ -1,10 +1,5 @@
 variables:
-- name: DATABRICKS_HOST
-  value: $(DATABRICKS_HOST)
-- name: DATABRICKS_TOKEN
-  value: $(DATABRICKS_TOKEN)
-- name: MLFLOW_TRACKING_URI
-  value: $(MLFLOW_TRACKING_URI)
+- group: Databricks-environment
 
 schedules:
 - cron: "00 00 * * *"
@@ -70,6 +65,10 @@ stages:
 
     - script: |
         python -c "from databrickslabs_cicdtemplates import dev_cicd_pipeline; dev_cicd_pipeline.main('dev-tests');"
+      env:
+        DATABRICKS_HOST: $(DATABRICKS_HOST)
+        DATABRICKS_TOKEN: $(DATABRICKS_TOKEN)
+        MLFLOW_TRACKING_URI: $(MLFLOW_TRACKING_URI)
       displayName: 'Deploy artifact'
 
 
