@@ -4,7 +4,7 @@ variables:
 - name: DATABRICKS_TOKEN
   value: $(DATABRICKS_TOKEN)
 - name: MLFLOW_TRACKING_URI
-  vallue: $(MLFLOW_TRACKING_URI)
+  value: $(MLFLOW_TRACKING_URI)
 
 schedules:
 - cron: "00 00 * * *"
